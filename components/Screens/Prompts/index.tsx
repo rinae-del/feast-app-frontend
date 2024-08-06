@@ -1,31 +1,21 @@
-import { View, Text, Pressable, ImageBackground, StyleSheet } from 'react-native'
-import React from 'react'
-import Container from '@/components/ui/Container'
-import bg from "../../../assets/bg.jpg"
 import { Colors } from '@/constants/Colors'
+import React from 'react'
+import { ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native'
+import bg from "../../../assets/bg.jpg"
 
 export default function Prompts() {
     return (
 
-        // <Container>
-        //     <Text>Log in as</Text>
-        //     <Pressable><Text>Business</Text></Pressable>
-        //     <Pressable><Text>Customer</Text></Pressable>
-        // </Container>
+        <ImageBackground source={bg} resizeMode="cover" style={styles.image} blurRadius={1}>
+            <View style={styles.overlay} />
 
-        <ImageBackground source={bg} resizeMode="cover" style={styles.image} blurRadius={12}>
             <View style={{
                 flex: 1,
                 justifyContent: "center",
                 alignItems: 'center',
                 borderWidth: 1,
                 padding: 14,
-                // position: 'absolute',
-                // bottom: 200,
                 width: '100%'
-                // left: 20,
-                // right: 20,
-                // backgroundColor: 'rgba(0,0,0,0.5)',
             }}>
                 <Text style={{
                     marginBottom: 10,
@@ -36,7 +26,7 @@ export default function Prompts() {
                     justifyContent: "space-around",
                     textShadowColor: '#888', // black shadow
                     textShadowOffset: { width: 2, height: 2 }, // shadow offset
-                    textShadowRadius: 4, // shadow blur
+                    textShadowRadius: 1, // shadow blur
                 }}>Feast app</Text>
                 <Text style={{
                     fontFamily: 'Montserrat_400Regular',
@@ -102,9 +92,10 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     image: {
-        flex: 1,
-
-        // justifyContent: 'center',
-        // alignItems: 'center',
+        flex: 1
     },
+    overlay: {
+        ...StyleSheet.absoluteFillObject,
+        backgroundColor: 'rgba(0,0,0,0.6)',
+    }
 });
