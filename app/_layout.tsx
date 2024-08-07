@@ -81,7 +81,7 @@ export default function RootLayout() {
         headerShadowVisible: false
       }}>
         <Stack.Screen name="index" options={{
-          headerShown: true, title: "Register",
+          headerShown: true, title: "Location",
         }} />
         {/* <Stack.Screen name="customer/login" options={{ headerShown: false }} /> */}
 

@@ -1,7 +1,7 @@
-import RegisterScreen from '@/components/Screens/CustomerScreen/RegisterScreen'
+import LocationScreen from '@/components/Screens/CustomerScreen/LocationScreen'
 import React from 'react'
 export default function Home() {
     return (
-        <RegisterScreen />
+        <LocationScreen />
     )
 }
