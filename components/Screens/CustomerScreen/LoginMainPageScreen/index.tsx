@@ -9,11 +9,11 @@ export default function LoginMainPage() {
     const [selectedCountry, setSelectedCountry] = useState(null);
     const [inputValue, setInputValue] = useState('');
 
-    function handleInputValue(phoneNumber) {
+    function handleInputValue(phoneNumber: string | null | number | any) {
         setInputValue(phoneNumber);
     }
 
-    function handleSelectedCountry(country) {
+    function handleSelectedCountry(country: string | null | number | any) {
         setSelectedCountry(country);
     }
 
@@ -97,6 +97,7 @@ export default function LoginMainPage() {
                             },
                             input: {
                                 marginLeft: 0,
+                                fontFamily: "Montserrat_500Medium",
                             }
 
                         }}

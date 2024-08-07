@@ -26,7 +26,8 @@ import {
 } from '@expo-google-fonts/montserrat';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { StatusBar } from 'react-native';
-
+import Entypo from '@expo/vector-icons/Entypo';
+import { Colors } from '@/constants/Colors';
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
@@ -67,10 +68,27 @@ export default function RootLayout() {
 
     <SafeAreaProvider>
       <StatusBar barStyle="light-content" backgroundColor="#212529" />
-      <Stack>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
-        {/* <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      <Stack.Screen name="+not-found" /> */}
+      <Stack screenOptions={{
+        headerTintColor: Colors.black,
+        headerStyle: { backgroundColor: Colors.lightGray },
+        headerBackTitleVisible: false,
+        headerTitleStyle: {
+          fontFamily: "Montserrat_900Black",
+          fontSize: 16,
+
+        },
+        headerTitleAlign: "center",
+        headerShadowVisible: false
+      }}>
+        <Stack.Screen name="index" options={{
+          headerShown: true, title: "Sign In",
+
+
+
+
+        }} />
+        {/* <Stack.Screen name="customer/login" options={{ headerShown: false }} /> */}
+
       </Stack>
     </SafeAreaProvider>
   );
