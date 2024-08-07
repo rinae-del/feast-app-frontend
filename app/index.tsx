@@ -1,7 +1,7 @@
-import FinalStepScreen from '@/components/Screens/CustomerScreen/FinalStepScreen'
+import DashboardScreen from '@/components/Screens/CustomerScreen/DashboardScreen'
 import React from 'react'
 export default function Home() {
     return (
-        <FinalStepScreen />
+        <DashboardScreen />
     )
 }
