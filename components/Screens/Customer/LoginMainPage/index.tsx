@@ -29,29 +29,43 @@ export default function LoginMainPage() {
             }}>
                 <View style={{
                     position: 'absolute',
-                    bottom: 300,
-                    borderWidth: 1,
+                    bottom: 200,
                     width: '100%'
                 }}>
                     <Text style={{
                         textAlign: 'center',
-                        color: Colors.lightGray
-                    }}>Sign InWith Your</Text>
+                        color: Colors.lightGray,
+                        fontFamily: "Montserrat_900Black",
+                        fontSize: 20
+                    }}>Sign In With Your</Text>
                     <Text style={{
                         textAlign: 'center',
-                        color: Colors.lightGray
+                        color: Colors.lightGray,
+                        fontFamily: "Montserrat_900Black",
+                        fontSize: 20
                     }}>
                         Mobile Number</Text>
-                    <Text style={{
-                        color: Colors.lightGray,
-                        textAlign: 'center',
+                    <View style={{
+                        marginVertical: 20
+                    }}>
+                        <Text style={{
+                            color: Colors.lightGray,
+                            textAlign: 'center',
+                            fontFamily: "Montserrat_400Regular",
 
-                    }}>We’ll check if you have an account, and</Text>
-                    <Text style={{
-                        color: Colors.lightGray,
-                        textAlign: 'center',
 
-                    }}>help create one if you don’t.</Text>
+
+                        }}>We’ll check if you have an account, and</Text>
+                        <Text style={{
+                            color: Colors.lightGray,
+                            textAlign: 'center',
+                            fontFamily: "Montserrat_400Regular",
+
+
+                        }}>help create one if you don’t.</Text>
+                    </View>
+
+                    {/* Adjusted the following to match the ui design */}
                     <PhoneInput
                         defaultCountry="ZA"
                         placeholder=""
@@ -101,8 +115,9 @@ export default function LoginMainPage() {
                             borderColor: Colors.lightGray,
                             backgroundColor: "grey",
                             fontSize: 14.4,
-                            marginVertical: 10,
+                            marginVertical: 20,
                             width: "100%",
+
                         },
                         {
                             backgroundColor: pressed ? Colors.lightGray : "transparent",
