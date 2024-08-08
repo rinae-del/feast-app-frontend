@@ -13,16 +13,7 @@ import {
   Montserrat_600SemiBold,
   Montserrat_700Bold,
   Montserrat_800ExtraBold,
-  Montserrat_900Black,
-  Montserrat_100Thin_Italic,
-  Montserrat_200ExtraLight_Italic,
-  Montserrat_300Light_Italic,
-  Montserrat_400Regular_Italic,
-  Montserrat_500Medium_Italic,
-  Montserrat_600SemiBold_Italic,
-  Montserrat_700Bold_Italic,
-  Montserrat_800ExtraBold_Italic,
-  Montserrat_900Black_Italic,
+  Montserrat_900Black
 } from '@expo-google-fonts/montserrat';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { StatusBar } from 'react-native';
@@ -41,16 +32,7 @@ export default function RootLayout() {
     Montserrat_600SemiBold,
     Montserrat_700Bold,
     Montserrat_800ExtraBold,
-    Montserrat_900Black,
-    Montserrat_100Thin_Italic,
-    Montserrat_200ExtraLight_Italic,
-    Montserrat_300Light_Italic,
-    Montserrat_400Regular_Italic,
-    Montserrat_500Medium_Italic,
-    Montserrat_600SemiBold_Italic,
-    Montserrat_700Bold_Italic,
-    Montserrat_800ExtraBold_Italic,
-    Montserrat_900Black_Italic,
+    Montserrat_900Black
   });
 
 
