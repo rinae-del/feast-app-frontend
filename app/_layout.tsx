@@ -64,8 +64,16 @@ export default function RootLayout() {
         headerShadowVisible: false
       }}>
         <Stack.Screen name="index" options={{
-          headerShown: true, title: "User", headerRight: () => <Pressable><FontAwesome6 name="circle-user" size={24} color="black" /></Pressable>
+          headerShown: true, title: "My Account",
         }} />
+        {/* <Stack.Screen name="index" options={{
+          headerTintColor: Colors.white,
+          headerStyle: { backgroundColor: "#000" },
+          headerShown: true, title: "My Account", headerRight: () => <Pressable><FontAwesome6 name="circle-user" size={24} color="white" /></Pressable>
+        }} /> */}
+        {/* <Stack.Screen name="index" options={{
+          headerShown: true, title: "User", headerRight: () => <Pressable><FontAwesome6 name="circle-user" size={24} color="black" /></Pressable>
+        }} /> */}
         {/* <Stack.Screen name="customer/login" options={{ headerShown: false }} /> */}
 
       </Stack>
