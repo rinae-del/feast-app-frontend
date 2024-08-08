@@ -62,7 +62,6 @@ export default function UserScreen() {
     }, [])
     return (
         <View style={{
-
             flex: 1,
             backgroundColor: Colors.lightGray,
             padding: 20,
@@ -80,7 +79,6 @@ export default function UserScreen() {
                 paddingVertical: 8,
                 paddingHorizontal: 16,
                 marginVertical: 10,
-                // marginBottom: 20
             }}>
                 <View style={{
                     flexDirection: 'row',
@@ -92,14 +90,10 @@ export default function UserScreen() {
                         height: 60,
                         borderRadius: 30,
                         overflow: 'hidden',
-                        // marginHorizontal: 'auto',
                         alignItems: 'center',
                         justifyContent: 'center',
                         marginVertical: 20
                     }}>
-
-
-
                         {profileFromStorage ?
                             <Image source={{ uri: profileFromStorage }} style={{
                                 width: 60,
@@ -110,8 +104,6 @@ export default function UserScreen() {
                                     width: 60,
                                     height: 60,
                                     borderRadius: 30,
-                                    // overflow: 'hidden',
-                                    // marginHorizontal: 'auto',
                                     alignItems: 'center',
                                     justifyContent: 'center',
                                     marginVertical: 20

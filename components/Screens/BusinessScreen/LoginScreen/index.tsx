@@ -1,9 +1,9 @@
-import { View, Text, TextInput, Pressable } from 'react-native'
 import React, { useState } from 'react';
+import { Pressable, Text, TextInput, View } from 'react-native';
 
-import PhoneInput from 'react-native-international-phone-number';
 import { Colors } from '@/constants/Colors';
-import { Link, useRouter } from 'expo-router';
+import { useRouter } from 'expo-router';
+import PhoneInput from 'react-native-international-phone-number';
 
 export default function LoginScreen() {
     const [selectedCountry, setSelectedCountry] = useState(null);
@@ -24,11 +24,9 @@ export default function LoginScreen() {
     const router = useRouter()
     return (
         <View style={{
-
             flex: 1,
             backgroundColor: Colors.lightGray,
             padding: 20,
-
         }}>
             <View style={{
                 marginVertical: 10
@@ -117,7 +115,6 @@ export default function LoginScreen() {
                     borderRadius: 100,
                     borderWidth: 2,
                     borderColor: Colors.black,
-
                     fontSize: 14.4,
                     marginVertical: 20,
                     width: "100%",

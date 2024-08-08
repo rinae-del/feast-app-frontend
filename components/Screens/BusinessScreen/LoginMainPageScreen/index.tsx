@@ -1,9 +1,9 @@
 import { Colors } from '@/constants/Colors';
+import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native';
-import bg from "../../../../assets/woman-eating.jpg";
 import PhoneInput from 'react-native-international-phone-number';
-import { useRouter } from 'expo-router';
+import bg from "../../../../assets/woman-eating.jpg";
 
 export default function LoginMainPageScreen() {
     const [selectedCountry, setSelectedCountry] = useState(null);
@@ -122,7 +122,6 @@ export default function LoginMainPageScreen() {
                             borderRadius: 100,
                             borderWidth: 2,
                             borderColor: Colors.lightGray,
-
                             fontSize: 14.4,
                             marginVertical: 20,
                             width: "100%",

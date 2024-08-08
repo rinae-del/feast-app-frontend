@@ -1,9 +1,8 @@
-import { View, Text, TextInput, Pressable } from 'react-native'
-import React, { useState } from 'react'
 import { Colors } from '@/constants/Colors';
-import Feather from '@expo/vector-icons/Feather';
-import PhoneInput from 'react-native-international-phone-number';
 import { useRouter } from 'expo-router';
+import React, { useState } from 'react';
+import { Pressable, Text, TextInput, View } from 'react-native';
+import PhoneInput from 'react-native-international-phone-number';
 
 export default function LookupUserScreen() {
 
@@ -27,7 +26,6 @@ export default function LookupUserScreen() {
 
     return (
         <View style={{
-
             flex: 1,
             backgroundColor: Colors.lightGray,
             padding: 20,
@@ -70,7 +68,6 @@ export default function LookupUserScreen() {
                     fontSize: 16,
                     marginBottom: 8,
                     textAlign: 'center'
-
                 }}>Or, Phone Number</Text>
                 {/* Adjusted the following to match the ui design */}
                 <PhoneInput
@@ -106,9 +103,7 @@ export default function LookupUserScreen() {
                             marginLeft: 0,
                             fontFamily: "Montserrat_500Medium",
                         }
-
                     }}
-
                     value={inputValue}
                     onChangePhoneNumber={handleInputValue}
                     selectedCountry={selectedCountry}
@@ -122,11 +117,9 @@ export default function LookupUserScreen() {
                     borderRadius: 100,
                     borderWidth: 2,
                     borderColor: Colors.black,
-
                     fontSize: 14.4,
                     marginVertical: 20,
                     width: "100%",
-
                 },
                 {
                     backgroundColor: pressed ? Colors.lightGray : Colors.black,

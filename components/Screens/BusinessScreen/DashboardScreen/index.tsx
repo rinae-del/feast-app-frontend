@@ -4,14 +4,13 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as ImagePicker from 'expo-image-picker';
 import { useRouter } from 'expo-router';
 import React, { useEffect, useState } from 'react';
-import { Dimensions, Image, Pressable, Text, View } from 'react-native';
+import { Image, Pressable, Text, View } from 'react-native';
 
 
 export default function DashboardScreen() {
 
     const [profileFromStorage, setProfileFromStorage] = useState("")
     const [image, setImage] = useState<string | null | any>(null);
-    const [modalVisible, setModalVisible] = useState(false);
     const pickImage = async () => {
         // No permissions request is necessary for launching the image library
         let result = await ImagePicker.launchImageLibraryAsync({
@@ -20,8 +19,6 @@ export default function DashboardScreen() {
             aspect: [4, 3],
             quality: 1,
         });
-
-        console.log(result);
 
         if (!result.canceled) {
             setImage(result.assets[0].uri);
@@ -53,7 +50,6 @@ export default function DashboardScreen() {
     const router = useRouter()
     return (
         <View style={{
-
             flex: 1,
             backgroundColor: Colors.lightGray,
             padding: 20,
@@ -83,7 +79,6 @@ export default function DashboardScreen() {
                         height: 60,
                         borderRadius: 30,
                         overflow: 'hidden',
-                        // marginHorizontal: 'auto',
                         alignItems: 'center',
                         justifyContent: 'center',
                         marginVertical: 20
@@ -101,8 +96,6 @@ export default function DashboardScreen() {
                                     width: 60,
                                     height: 60,
                                     borderRadius: 30,
-                                    // overflow: 'hidden',
-                                    // marginHorizontal: 'auto',
                                     alignItems: 'center',
                                     justifyContent: 'center',
                                     marginVertical: 20
@@ -146,7 +139,6 @@ export default function DashboardScreen() {
                     fontSize: 14.4,
                     marginTop: 20,
                     width: "100%",
-
                 },
                 {
                     backgroundColor: pressed ? Colors.lightGray : Colors.black,
@@ -161,11 +153,9 @@ export default function DashboardScreen() {
                     borderRadius: 100,
                     borderWidth: 2,
                     borderColor: Colors.black,
-
                     fontSize: 14.4,
                     marginVertical: 20,
                     width: "100%",
-
                 },
                 {
                     backgroundColor: pressed ? Colors.black : Colors.lightGray,

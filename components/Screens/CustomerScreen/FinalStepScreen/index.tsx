@@ -1,10 +1,10 @@
-import { View, Text, Pressable, Image } from 'react-native'
-import React, { useState } from 'react'
-import { Colors } from '@/constants/Colors'
+import { Colors } from '@/constants/Colors';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import * as ImagePicker from 'expo-image-picker';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useRouter } from 'expo-router'
+import * as ImagePicker from 'expo-image-picker';
+import { useRouter } from 'expo-router';
+import React, { useState } from 'react';
+import { Image, Pressable, Text, View } from 'react-native';
 
 export default function FinalStepScreen() {
     const router = useRouter()
@@ -38,7 +38,6 @@ export default function FinalStepScreen() {
     };
     return (
         <View style={{
-
             flex: 1,
             backgroundColor: Colors.lightGray,
             padding: 20,
@@ -78,7 +77,6 @@ export default function FinalStepScreen() {
                                 borderRadius: 100,
                                 borderWidth: 2,
                                 borderColor: Colors.black,
-
                                 fontSize: 14.4,
                                 marginVertical: 20,
                                 width: "100%",

@@ -1,8 +1,8 @@
-import { View, Text, TextInput, Pressable } from 'react-native'
-import React, { useState } from 'react'
 import { Colors } from '@/constants/Colors';
 import Feather from '@expo/vector-icons/Feather';
-import { useRouter } from 'expo-router'
+import { useRouter } from 'expo-router';
+import React, { useState } from 'react';
+import { Pressable, Text, TextInput, View } from 'react-native';
 
 export default function LocationScreen() {
     const [city, setCity] = useState("")
@@ -13,10 +13,8 @@ export default function LocationScreen() {
     const router = useRouter()
 
 
-
     return (
         <View style={{
-
             flex: 1,
             backgroundColor: Colors.lightGray,
             padding: 20,
@@ -50,7 +48,6 @@ export default function LocationScreen() {
                         onChangeText={handleCityInput}
                         value={city}
                         style={{
-
                             paddingVertical: 6,
                             fontFamily: "Montserrat_500Medium",
                             color: "#212529",
@@ -66,11 +63,9 @@ export default function LocationScreen() {
                     borderRadius: 100,
                     borderWidth: 2,
                     borderColor: Colors.black,
-
                     fontSize: 14.4,
                     marginVertical: 20,
                     width: "100%",
-
                 },
                 {
                     backgroundColor: pressed ? Colors.lightGray : Colors.black,

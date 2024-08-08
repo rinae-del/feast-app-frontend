@@ -1,9 +1,9 @@
-import { View, Text, Pressable } from 'react-native'
-import React from 'react'
-import { Colors } from 'react-native/Libraries/NewAppScreen'
-import { useRouter } from 'expo-router'
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 import { useNavigation } from '@react-navigation/native'
-import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
+import { useRouter } from 'expo-router'
+import React from 'react'
+import { Pressable, Text, View } from 'react-native'
+import { Colors } from 'react-native/Libraries/NewAppScreen'
 
 export default function MyAccountScreen() {
     const navigation = useNavigation()
@@ -17,11 +17,9 @@ export default function MyAccountScreen() {
     }, [navigation]);
     return (
         <View style={{
-
             flex: 1,
             backgroundColor: Colors.black,
             padding: 20,
-
         }}>
             <Pressable onPress={() => router.push("/business/login")} style={({ pressed }) => [
                 {
@@ -33,7 +31,6 @@ export default function MyAccountScreen() {
                     fontSize: 14.4,
                     marginVertical: 20,
                     width: "100%",
-
                 },
                 {
                     backgroundColor: pressed ? Colors.black : Colors.lightGray,

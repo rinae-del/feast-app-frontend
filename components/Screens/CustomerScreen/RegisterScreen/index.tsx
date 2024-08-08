@@ -31,11 +31,9 @@ export default function RegisterScreen() {
 
     return (
         <View style={{
-
             flex: 1,
             backgroundColor: Colors.lightGray,
             padding: 20,
-
         }}>
             <View style={{
                 marginVertical: 10
@@ -151,7 +149,6 @@ export default function RegisterScreen() {
                     borderRadius: 100,
                     borderWidth: 2,
                     borderColor: Colors.black,
-
                     fontSize: 14.4,
                     marginVertical: 20,
                     width: "100%",

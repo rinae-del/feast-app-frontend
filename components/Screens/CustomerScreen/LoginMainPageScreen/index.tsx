@@ -1,10 +1,9 @@
 import { Colors } from '@/constants/Colors';
 import React, { useState } from 'react';
 import { ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native';
-import bg from "../../../../assets/woman-eating.jpg";
 import PhoneInput from 'react-native-international-phone-number';
-
-import { useRouter } from 'expo-router'
+import bg from "../../../../assets/woman-eating.jpg";
+import { useRouter } from 'expo-router';
 
 export default function LoginMainPage() {
     const [selectedCountry, setSelectedCountry] = useState(null);
@@ -99,7 +98,6 @@ export default function LoginMainPage() {
                             }
 
                         }}
-
                         value={inputValue}
                         onChangePhoneNumber={handleInputValue}
                         selectedCountry={selectedCountry}
@@ -112,7 +110,6 @@ export default function LoginMainPage() {
                             borderRadius: 100,
                             borderWidth: 2,
                             borderColor: Colors.lightGray,
-
                             fontSize: 14.4,
                             marginVertical: 20,
                             width: "100%",

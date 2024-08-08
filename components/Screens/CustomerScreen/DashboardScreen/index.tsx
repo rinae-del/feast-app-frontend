@@ -9,7 +9,7 @@ import { Dimensions, Image, ImageBackground, Pressable, Text, View } from 'react
 
 
 
-const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
+const { width: screenWidth} = Dimensions.get('window');
 
 export default function DashboardScreen() {
 
@@ -25,7 +25,6 @@ export default function DashboardScreen() {
             quality: 1,
         });
 
-        console.log(result);
 
         if (!result.canceled) {
             setImage(result.assets[0].uri);
@@ -57,11 +56,9 @@ export default function DashboardScreen() {
 
     return (
         <View style={{
-
             flex: 1,
             backgroundColor: Colors.lightGray,
             padding: 20,
-
         }}>
             {/* Card */}
             <View style={{
@@ -92,8 +89,6 @@ export default function DashboardScreen() {
                         justifyContent: 'center',
                         marginVertical: 20
                     }}>
-
-
 
                         {profileFromStorage ?
                             <Image source={{ uri: profileFromStorage }} style={{
