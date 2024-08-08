@@ -1,6 +1,7 @@
 import { View, Text, TextInput, Pressable } from 'react-native'
 import React, { useState } from 'react'
 import { Colors } from '@/constants/Colors'
+import { useRouter } from 'expo-router'
 
 export default function RegisterScreen() {
     const [firstName, setFirstName] = useState("");
@@ -25,6 +26,7 @@ export default function RegisterScreen() {
         setPassword(text);
     };
 
+    const router = useRouter()
 
 
     return (
@@ -142,7 +144,7 @@ export default function RegisterScreen() {
                     }}
                 />
             </View>
-            <Pressable style={({ pressed }) => [
+            <Pressable onPress={() => router.push("/customer/location_search")} style={({ pressed }) => [
                 {
                     paddingVertical: 12,
                     paddingHorizontal: 20,

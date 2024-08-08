@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import PhoneInput from 'react-native-international-phone-number';
 import { Colors } from '@/constants/Colors';
 import { Link } from 'expo-router';
+import { useRouter } from 'expo-router'
 
 export default function LoginScreen() {
     const [selectedCountry, setSelectedCountry] = useState(null);
@@ -21,6 +22,7 @@ export default function LoginScreen() {
     const handlePasswordInput = (text: string) => {
         setPassword(text);
     };
+    const router = useRouter()
 
     return (
         <View style={{
@@ -110,7 +112,7 @@ export default function LoginScreen() {
                     }}
                 />
             </View>
-            <Pressable style={({ pressed }) => [
+            <Pressable onPress={() => router.push("/customer/verify_number")} style={({ pressed }) => [
                 {
                     paddingVertical: 12,
                     paddingHorizontal: 20,
@@ -143,7 +145,7 @@ export default function LoginScreen() {
                     flexDirection: 'row',
                     justifyContent: 'center',
                 }}>
-                    <Text style={{
+                    <Text onPress={() => router.push("/customer/reset_password")} style={{
                         color: Colors.black,
                         fontFamily: "Montserrat_700Bold",
                         fontSize: 14,
@@ -157,8 +159,16 @@ export default function LoginScreen() {
                         textAlign: 'center'
 
                     }}> to reset your password</Text>
-                </View>
 
+                </View>
+                <Text onPress={() => router.push("/customer/signup")} style={{
+                    color: Colors.black,
+                    fontFamily: "Montserrat_600SemiBold",
+                    fontSize: 14,
+                    textAlign: 'center',
+                    marginTop: 20
+
+                }}>Or signup</Text>
             </View>
         </View>
     )

@@ -76,7 +76,7 @@ export default function ImageViewer({ modalVisible, onDismiss, children }: TModa
                             {children}
                         </View>
 
-                        <Pressable style={({ pressed }) => [
+                        <Pressable onPress={onDismiss} style={({ pressed }) => [
                             {
                                 paddingVertical: 12,
                                 paddingHorizontal: 20,

@@ -59,7 +59,7 @@ export default function Prompts() {
                         fontFamily: 'Montserrat_500Medium',
                         textAlign: "center",
                     }}>Business</Text></Pressable>
-                <Pressable style={({ pressed }) => [
+                <Pressable onPress={() => router.push("/customer/main_login_screen")} style={({ pressed }) => [
                     {
                         paddingVertical: 12,
                         paddingHorizontal: 20,

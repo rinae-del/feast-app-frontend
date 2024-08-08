@@ -4,6 +4,7 @@ import { ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native
 import bg from "../../../../assets/woman-eating.jpg";
 import PhoneInput from 'react-native-international-phone-number';
 
+import { useRouter } from 'expo-router'
 
 export default function LoginMainPage() {
     const [selectedCountry, setSelectedCountry] = useState(null);
@@ -17,7 +18,7 @@ export default function LoginMainPage() {
         setSelectedCountry(country);
     }
 
-
+    const router = useRouter()
     return (
         <ImageBackground source={bg} resizeMode="cover" style={styles.image} blurRadius={1}>
             <View style={styles.overlay} />
@@ -104,7 +105,7 @@ export default function LoginMainPage() {
                         selectedCountry={selectedCountry}
                         onChangeSelectedCountry={handleSelectedCountry}
                     />
-                    <Pressable style={({ pressed }) => [
+                    <Pressable onPress={() => router.push("/customer/login")} style={({ pressed }) => [
                         {
                             paddingVertical: 12,
                             paddingHorizontal: 20,

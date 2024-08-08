@@ -1,6 +1,7 @@
 import { View, Text, TextInput, Pressable } from 'react-native'
 import React, { useState } from 'react'
 import { Colors } from '@/constants/Colors'
+import { useRouter } from 'expo-router'
 
 export default function VerifyNumberScreen() {
 
@@ -8,6 +9,8 @@ export default function VerifyNumberScreen() {
     const handleVerifyNumberInput = (text: string) => {
         setVerifyNumber(text);
     };
+    const router = useRouter()
+
     return (
         <View style={{
 
@@ -89,7 +92,7 @@ export default function VerifyNumberScreen() {
                     fontSize: 14,
                     textAlign: 'center'
                 }}> try again.</Text>
-                <Text style={{
+                <Text onPress={() => router.back()} style={{
                     color: Colors.black,
                     fontFamily: "Montserrat_700Bold",
                     fontSize: 14,

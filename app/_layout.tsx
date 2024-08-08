@@ -79,6 +79,16 @@ export default function RootLayout() {
           headerStyle: { backgroundColor: "#000" }, headerShown: true, title: "My Account"
         }} />
 
+        {/* Customer screens */}
+        <Stack.Screen name="customer/main_login_screen/index" options={{ headerShown: false }} />
+        <Stack.Screen name="customer/login/index" options={{ headerShown: true, title: "Sign In" }} />
+        <Stack.Screen name="customer/reset_password/index" options={{ headerShown: true, title: "Reset Password" }} />
+        <Stack.Screen name="customer/verify_number/index" options={{ headerShown: true, title: "Verify Your Number" }} />
+        <Stack.Screen name="customer/signup/index" options={{ headerShown: true, title: "Register" }} />
+        <Stack.Screen name="customer/location_search/index" options={{ headerShown: true, title: "Location" }} />
+        <Stack.Screen name="customer/final_step/index" options={{ headerShown: true, title: "Final Step" }} />
+        <Stack.Screen name="customer/dashboard/index" options={{ headerShown: true, title: "Dashboard" }} />
+
       </Stack>
     </SafeAreaProvider>
   );

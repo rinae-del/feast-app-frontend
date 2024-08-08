@@ -2,12 +2,15 @@ import { View, Text, TextInput, Pressable } from 'react-native'
 import React, { useState } from 'react'
 import { Colors } from '@/constants/Colors';
 import Feather from '@expo/vector-icons/Feather';
+import { useRouter } from 'expo-router'
+
 export default function LocationScreen() {
     const [city, setCity] = useState("")
 
     const handleCityInput = (text: string) => {
         setCity(text);
     };
+    const router = useRouter()
 
 
 
@@ -56,7 +59,7 @@ export default function LocationScreen() {
                     />
                 </View>
             </View>
-            <Pressable style={({ pressed }) => [
+            <Pressable onPress={() => router.push("/customer/final_step")} style={({ pressed }) => [
                 {
                     paddingVertical: 12,
                     paddingHorizontal: 20,

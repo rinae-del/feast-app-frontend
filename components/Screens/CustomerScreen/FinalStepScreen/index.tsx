@@ -4,8 +4,11 @@ import { Colors } from '@/constants/Colors'
 import Ionicons from '@expo/vector-icons/Ionicons';
 import * as ImagePicker from 'expo-image-picker';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useRouter } from 'expo-router'
 
 export default function FinalStepScreen() {
+    const router = useRouter()
+
     const [image, setImage] = useState<string | null | any>(null);
 
     const pickImage = async () => {
@@ -68,7 +71,7 @@ export default function FinalStepScreen() {
                                 height: 200,
                             }} />
                         </View>
-                        <Pressable style={({ pressed }) => [
+                        <Pressable onPress={() => router.push("/customer/dashboard")} style={({ pressed }) => [
                             {
                                 paddingVertical: 12,
                                 paddingHorizontal: 20,
