@@ -3,6 +3,7 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import {
   useFonts,
   Montserrat_100Thin,
@@ -16,7 +17,7 @@ import {
   Montserrat_900Black
 } from '@expo-google-fonts/montserrat';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { StatusBar } from 'react-native';
+import { Pressable, StatusBar } from 'react-native';
 import Entypo from '@expo/vector-icons/Entypo';
 import { Colors } from '@/constants/Colors';
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -63,7 +64,7 @@ export default function RootLayout() {
         headerShadowVisible: false
       }}>
         <Stack.Screen name="index" options={{
-          headerShown: true, title: "Lookup User",
+          headerShown: true, title: "User", headerRight: () => <Pressable><FontAwesome6 name="circle-user" size={24} color="black" /></Pressable>
         }} />
         {/* <Stack.Screen name="customer/login" options={{ headerShown: false }} /> */}
 

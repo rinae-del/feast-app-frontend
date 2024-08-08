@@ -6,7 +6,8 @@ import React, { useEffect, useState } from 'react';
 import { Dimensions, Image, Pressable, Text, View } from 'react-native';
 
 
-export default function DashboardScreen() {
+
+export default function UserScreen() {
 
     const [profileFromStorage, setProfileFromStorage] = useState("")
     const [image, setImage] = useState<string | null | any>(null);
@@ -49,7 +50,6 @@ export default function DashboardScreen() {
         };
         getData()
     }, [])
-
     return (
         <View style={{
 
@@ -119,12 +119,12 @@ export default function DashboardScreen() {
                             color: Colors.black,
                             fontFamily: "Montserrat_700Bold",
                             fontSize: 14
-                        }}>Buster’s Pizza</Text>
+                        }}>Amanda</Text>
                         <Text style={{
                             color: Colors.black,
                             fontFamily: "Montserrat_400Regular",
                             fontSize: 14
-                        }}>1930 Garent Street</Text>
+                        }}>ID 98009902</Text>
                         <Text style={{
                             color: Colors.black,
                             fontFamily: "Montserrat_400Regular",
@@ -135,43 +135,6 @@ export default function DashboardScreen() {
                 </View>
 
             </View>
-            <Pressable style={({ pressed }) => [
-                {
-                    paddingVertical: 12,
-                    paddingHorizontal: 20,
-                    borderRadius: 100,
-                    borderWidth: 2,
-                    borderColor: Colors.black,
-                    fontSize: 14.4,
-                    marginTop: 20,
-                    width: "100%",
-
-                },
-                {
-                    backgroundColor: pressed ? Colors.lightGray : Colors.black,
-                },
-            ]}>
-                <Text style={{ color: 'white', textAlign: 'center', fontSize: 15, fontFamily: 'Montserrat_800ExtraBold', }}>Scan Code</Text>
-            </Pressable>
-            <Pressable style={({ pressed }) => [
-                {
-                    paddingVertical: 12,
-                    paddingHorizontal: 20,
-                    borderRadius: 100,
-                    borderWidth: 2,
-                    borderColor: Colors.black,
-
-                    fontSize: 14.4,
-                    marginVertical: 20,
-                    width: "100%",
-
-                },
-                {
-                    backgroundColor: pressed ? Colors.black : Colors.lightGray,
-                },
-            ]}>
-                <Text style={{ color: Colors.black, textAlign: 'center', fontSize: 15, fontFamily: 'Montserrat_800ExtraBold', }}>Lookup User</Text>
-            </Pressable>
         </View>
     )
 }
