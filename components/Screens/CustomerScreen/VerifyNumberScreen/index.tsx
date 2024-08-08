@@ -53,7 +53,7 @@ export default function VerifyNumberScreen() {
                     borderRadius: 100,
                     borderWidth: 2,
                     borderColor: Colors.black,
-                    backgroundColor: "grey",
+
                     fontSize: 14.4,
                     marginVertical: 20,
                     width: "100%",

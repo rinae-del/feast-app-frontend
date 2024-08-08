@@ -1,7 +1,7 @@
 import { View, Text, Pressable } from 'react-native'
 import React from 'react'
 
-type TPressable ={}
+type TPressable = {}
 
 
 
@@ -15,7 +15,7 @@ export default function Button() {
                     paddingHorizontal: 20,
                     borderRadius: 4,
                     elevation: 2,
-                    backgroundColor: "grey",
+
                     fontSize: 14.4,
                     fontFamily: 'Inter_400Regular',
                     marginVertical: 10,

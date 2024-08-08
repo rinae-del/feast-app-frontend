@@ -63,7 +63,7 @@ export default function RootLayout() {
         headerShadowVisible: false
       }}>
         <Stack.Screen name="index" options={{
-          headerShown: true, title: "Reset Password",
+          headerShown: true, title: "Dashboard",
         }} />
         {/* <Stack.Screen name="customer/login" options={{ headerShown: false }} /> */}
 

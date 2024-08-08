@@ -42,7 +42,7 @@ export default function Prompts() {
                         borderRadius: 4,
                         borderWidth: 1.4,
                         borderColor: Colors.lightGray,
-                        backgroundColor: "grey",
+
                         fontSize: 14.4,
                         marginVertical: 10,
                         width: "100%",
@@ -63,7 +63,7 @@ export default function Prompts() {
                         borderRadius: 4,
                         borderWidth: 1.4,
                         borderColor: Colors.black,
-                        backgroundColor: "grey",
+
                         fontSize: 14.4,
                         marginVertical: 10,
                         width: "100%",

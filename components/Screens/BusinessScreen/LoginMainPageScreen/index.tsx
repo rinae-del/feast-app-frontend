@@ -120,7 +120,7 @@ export default function LoginMainPageScreen() {
                             borderRadius: 100,
                             borderWidth: 2,
                             borderColor: Colors.lightGray,
-                            backgroundColor: "grey",
+
                             fontSize: 14.4,
                             marginVertical: 20,
                             width: "100%",
