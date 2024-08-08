@@ -4,11 +4,21 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as ImagePicker from 'expo-image-picker';
 import React, { useEffect, useState } from 'react';
 import { Dimensions, Image, Pressable, Text, View } from 'react-native';
-
+import { useRouter } from 'expo-router'
+import { useNavigation } from '@react-navigation/native'
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 
 
 export default function UserScreen() {
-
+    const navigation = useNavigation()
+    const router = useRouter()
+    React.useEffect(() => {
+        // Use `setOptions` to update the button that we previously specified
+        // Now the button includes an `onPress` handler to update the count
+        navigation.setOptions({
+            headerRight: () => <Pressable onPress={() => router.push("/business/account")}><FontAwesome6 name="circle-user" size={24} color="white" /></Pressable>
+        });
+    }, [navigation]);
     const [profileFromStorage, setProfileFromStorage] = useState("")
     const [image, setImage] = useState<string | null | any>(null);
     const [modalVisible, setModalVisible] = useState(false);

@@ -2,8 +2,11 @@ import { Colors } from '@/constants/Colors'
 import React from 'react'
 import { ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native'
 import bg from "../../../assets/bg.jpg"
+import { useRouter } from 'expo-router'
 
 export default function Prompts() {
+
+    const router = useRouter()
     return (
 
         <ImageBackground source={bg} resizeMode="cover" style={styles.image} blurRadius={1}>
@@ -35,7 +38,7 @@ export default function Prompts() {
                     textShadowOffset: { width: 2, height: 2 }, // shadow offset
                     textShadowRadius: 4, // shadow blur
                 }}>Log in as</Text>
-                <Pressable style={({ pressed }) => [
+                <Pressable onPress={() => router.push("/business/main_login_screen")} style={({ pressed }) => [
                     {
                         paddingVertical: 12,
                         paddingHorizontal: 20,

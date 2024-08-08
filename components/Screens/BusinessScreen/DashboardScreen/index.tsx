@@ -2,6 +2,7 @@ import { Colors } from '@/constants/Colors';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as ImagePicker from 'expo-image-picker';
+import { useRouter } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import { Dimensions, Image, Pressable, Text, View } from 'react-native';
 
@@ -49,7 +50,7 @@ export default function DashboardScreen() {
         };
         getData()
     }, [])
-
+    const router = useRouter()
     return (
         <View style={{
 
@@ -153,7 +154,7 @@ export default function DashboardScreen() {
             ]}>
                 <Text style={{ color: 'white', textAlign: 'center', fontSize: 15, fontFamily: 'Montserrat_800ExtraBold', }}>Scan Code</Text>
             </Pressable>
-            <Pressable style={({ pressed }) => [
+            <Pressable onPress={() => router.push("/business/lookup_user")} style={({ pressed }) => [
                 {
                     paddingVertical: 12,
                     paddingHorizontal: 20,

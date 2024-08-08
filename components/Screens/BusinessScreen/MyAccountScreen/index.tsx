@@ -1,8 +1,20 @@
 import { View, Text, Pressable } from 'react-native'
 import React from 'react'
 import { Colors } from 'react-native/Libraries/NewAppScreen'
+import { useRouter } from 'expo-router'
+import { useNavigation } from '@react-navigation/native'
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 
 export default function MyAccountScreen() {
+    const navigation = useNavigation()
+    const router = useRouter()
+    React.useEffect(() => {
+        // Use `setOptions` to update the button that we previously specified
+        // Now the button includes an `onPress` handler to update the count
+        navigation.setOptions({
+            headerRight: () => <Pressable onPress={() => router.push("/business/account")}><FontAwesome6 name="circle-user" size={24} color="white" /></Pressable>
+        });
+    }, [navigation]);
     return (
         <View style={{
 
@@ -11,7 +23,7 @@ export default function MyAccountScreen() {
             padding: 20,
 
         }}>
-            <Pressable style={({ pressed }) => [
+            <Pressable onPress={() => router.push("/business/login")} style={({ pressed }) => [
                 {
                     paddingVertical: 12,
                     paddingHorizontal: 20,

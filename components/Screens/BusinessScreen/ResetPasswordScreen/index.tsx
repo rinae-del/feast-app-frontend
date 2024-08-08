@@ -1,6 +1,7 @@
 import { View, Text, TextInput, Pressable } from 'react-native'
 import React, { useState } from 'react'
 import { Colors } from '@/constants/Colors';
+import { useRouter } from 'expo-router';
 
 
 export default function ResetPasswordScreen() {
@@ -16,6 +17,7 @@ export default function ResetPasswordScreen() {
     const handleConfirmPasswordInput = (text: string) => {
         setConfirmPassword(text);
     };
+    const router = useRouter()
     return (
         <View style={{
 
@@ -105,7 +107,7 @@ export default function ResetPasswordScreen() {
                     }}
                 />
             </View>
-            <Pressable style={({ pressed }) => [
+            <Pressable onPress={() => router.push("/business/login")} style={({ pressed }) => [
                 {
                     paddingVertical: 12,
                     paddingHorizontal: 20,

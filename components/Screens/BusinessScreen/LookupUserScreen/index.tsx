@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Colors } from '@/constants/Colors';
 import Feather from '@expo/vector-icons/Feather';
 import PhoneInput from 'react-native-international-phone-number';
+import { useRouter } from 'expo-router';
 
 export default function LookupUserScreen() {
 
@@ -22,6 +23,7 @@ export default function LookupUserScreen() {
         setSearchUser(text);
     };
 
+    const router = useRouter()
 
     return (
         <View style={{
@@ -113,7 +115,7 @@ export default function LookupUserScreen() {
                     onChangeSelectedCountry={handleSelectedCountry}
                 />
             </View>
-            <Pressable style={({ pressed }) => [
+            <Pressable onPress={() => router.push("/business/user_search_result")} style={({ pressed }) => [
                 {
                     paddingVertical: 12,
                     paddingHorizontal: 20,
