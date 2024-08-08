@@ -1,7 +1,8 @@
-import Prompts from '@/components/Screens/PromptsScreen'
+
+import LoginMainPage from '@/components/Screens/CustomerScreen/LoginMainPageScreen'
 import React from 'react'
 export default function Home() {
     return (
-        <Prompts />
+        <LoginMainPage />
     )
 }

@@ -30,7 +30,7 @@ export default function LoginScreen() {
             padding: 20,
 
         }}>
-            <View style={{
+            {/* <View style={{
                 marginVertical: 10
             }}>
                 <Text style={{
@@ -39,7 +39,7 @@ export default function LoginScreen() {
                     fontSize: 16,
                     marginBottom: 8
                 }}>Mobile Phone #</Text>
-                {/* Adjusted the following to match the ui design */}
+               
                 <PhoneInput
                     defaultCountry="CA"
                     placeholder="+13065014513"
@@ -80,7 +80,7 @@ export default function LoginScreen() {
                     selectedCountry={selectedCountry}
                     onChangeSelectedCountry={handleSelectedCountry}
                 />
-            </View>
+            </View> */}
 
             <View style={{
                 marginVertical: 10
@@ -157,14 +157,6 @@ export default function LoginScreen() {
                     }}> to reset your password</Text>
 
                 </View>
-                <Text onPress={() => router.push("/customer/signup")} style={{
-                    color: Colors.black,
-                    fontFamily: "Montserrat_600SemiBold",
-                    fontSize: 14,
-                    textAlign: 'center',
-                    marginTop: 20
-
-                }}>Or signup</Text>
             </View>
         </View>
     )

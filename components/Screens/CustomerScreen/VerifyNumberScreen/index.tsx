@@ -48,7 +48,7 @@ export default function VerifyNumberScreen() {
                     }}
                 />
             </View>
-            <Pressable style={({ pressed }) => [
+            <Pressable onPress={() => router.push("/customer/signup")} style={({ pressed }) => [
                 {
                     paddingVertical: 12,
                     paddingHorizontal: 20,
