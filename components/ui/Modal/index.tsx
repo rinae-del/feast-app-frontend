@@ -58,7 +58,7 @@ export default function ImageViewer({ modalVisible, onDismiss, children }: TModa
                     </View>
                     <View style={{
                         flex: 1,
-                        marginVertical: 20
+                        marginVertical: 20,
                         // justifyContent: 'center',
                         // alignItems: 'center'
                     }}>
@@ -66,12 +66,15 @@ export default function ImageViewer({ modalVisible, onDismiss, children }: TModa
                             textAlign: 'center',
                             fontSize: 14,
                             color: 'white',
-                            marginBottom: 20
+                            marginBottom: 20,
+                            fontFamily: "Montserrat_400Regular",
 
                         }}>Scan my Feastalot QR Code or lookup
 
                             user ID 98009902</Text>
-                        {children}
+                        <View>
+                            {children}
+                        </View>
 
                         <Pressable style={({ pressed }) => [
                             {

@@ -120,9 +120,21 @@ export default function DashboardScreen() {
                         }
                     </View>
                     <View>
-                        <Text>Amanda</Text>
-                        <Text>ID 98009902</Text>
-                        <Text>New York, NY</Text>
+                        <Text style={{
+                            color: Colors.black,
+                            fontFamily: "Montserrat_700Bold",
+                            fontSize: 14
+                        }}>Amanda</Text>
+                        <Text style={{
+                            color: Colors.black,
+                            fontFamily: "Montserrat_400Regular",
+                            fontSize: 14
+                        }}>ID 98009902</Text>
+                        <Text style={{
+                            color: Colors.black,
+                            fontFamily: "Montserrat_400Regular",
+                            fontSize: 14
+                        }}>New York, NY</Text>
                     </View>
 
                 </View>
@@ -158,7 +170,9 @@ export default function DashboardScreen() {
                         </ImageBackground>
                     </View>
                     <Text style={{
-                        fontSize: 12,
+                        color: Colors.black,
+                        fontFamily: "Montserrat_400Regular",
+                        fontSize: 11,
                         textAlign: 'center'
                     }}>23 Scans</Text>
                 </View>

@@ -52,9 +52,6 @@ export default function LoginMainPage() {
                             color: Colors.lightGray,
                             textAlign: 'center',
                             fontFamily: "Montserrat_400Regular",
-
-
-
                         }}>We’ll check if you have an account, and</Text>
                         <Text style={{
                             color: Colors.lightGray,
