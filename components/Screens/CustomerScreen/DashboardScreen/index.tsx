@@ -9,7 +9,7 @@ import { FlashList } from '@shopify/flash-list';
 import * as ImagePicker from 'expo-image-picker';
 import { useRouter } from 'expo-router';
 import React, { useEffect, useRef, useState } from 'react';
-import { Dimensions, Image, ImageBackground, Pressable, Text, View } from 'react-native';
+import { Dimensions, Image, ImageBackground, Pressable, Text, View, ScrollView } from 'react-native';
 import { Video } from 'expo-av';
 const videoSource =
     'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';
@@ -100,199 +100,209 @@ export default function DashboardScreen() {
         <View style={{
             flex: 1,
             backgroundColor: Colors.lightGray,
-            padding: 20,
+            paddingHorizontal: 20,
         }}>
-            {/* Card */}
-            <View style={{
-                backgroundColor: Colors.white,
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                borderWidth: 1,
-                borderRadius: 14,
-                borderColor: Colors.white,
-                paddingVertical: 8,
-                paddingHorizontal: 16,
-                marginVertical: 10,
-                // marginBottom: 20
+            <ScrollView showsVerticalScrollIndicator={false} style={{
+                flex: 1,
             }}>
+                {/* Card */}
                 <View style={{
+                    backgroundColor: Colors.white,
                     flexDirection: 'row',
+                    justifyContent: 'space-between',
                     alignItems: 'center',
-                    gap: 10
+                    borderWidth: 1,
+                    borderRadius: 14,
+                    borderColor: Colors.white,
+                    paddingVertical: 8,
+                    paddingHorizontal: 16,
+                    marginVertical: 10,
+                    // marginBottom: 20
                 }}>
                     <View style={{
-                        width: 60,
-                        height: 60,
-                        borderRadius: 30,
-                        overflow: 'hidden',
-                        // marginHorizontal: 'auto',
+                        flexDirection: 'row',
                         alignItems: 'center',
-                        justifyContent: 'center',
-                        marginVertical: 20
+                        gap: 10
                     }}>
+                        <View style={{
+                            width: 60,
+                            height: 60,
+                            borderRadius: 30,
+                            overflow: 'hidden',
+                            // marginHorizontal: 'auto',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            marginVertical: 20
+                        }}>
 
-                        {profileFromStorage !== null || profileFromStorage !== "" ?
-                            <Image source={{ uri: profileFromStorage !== "" ? profileFromStorage : undefined }} style={{
-                                width: 60,
-                                height: 60,
-                            }} /> :
-                            <Pressable onPress={pickImage} style={({ pressed }) => [
-                                {
+                            {profileFromStorage !== null || profileFromStorage !== "" ?
+                                <Image source={{ uri: profileFromStorage !== "" ? profileFromStorage : undefined }} style={{
                                     width: 60,
                                     height: 60,
-                                    borderRadius: 30,
-                                    // overflow: 'hidden',
-                                    // marginHorizontal: 'auto',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    marginVertical: 20
-                                },
-                                {
-                                    backgroundColor: pressed ? Colors.lightGray : Colors.white,
-                                },
-                            ]}>
-                                <AntDesign name="user" size={24} color="black" />
-                            </Pressable>
-                        }
+                                }} /> :
+                                <Pressable onPress={pickImage} style={({ pressed }) => [
+                                    {
+                                        width: 60,
+                                        height: 60,
+                                        borderRadius: 30,
+                                        // overflow: 'hidden',
+                                        // marginHorizontal: 'auto',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        marginVertical: 20
+                                    },
+                                    {
+                                        backgroundColor: pressed ? Colors.lightGray : Colors.white,
+                                    },
+                                ]}>
+                                    <AntDesign name="user" size={24} color="black" />
+                                </Pressable>
+                            }
+                        </View>
+                        <View>
+                            <Text style={{
+                                color: Colors.black,
+                                fontFamily: "Montserrat_700Bold",
+                                fontSize: 14
+                            }}>Amanda</Text>
+                            <Text style={{
+                                color: Colors.black,
+                                fontFamily: "Montserrat_400Regular",
+                                fontSize: 14
+                            }}>ID 98009902</Text>
+                            <Text style={{
+                                color: Colors.black,
+                                fontFamily: "Montserrat_400Regular",
+                                fontSize: 14
+                            }}>New York, NY</Text>
+                        </View>
+
                     </View>
+                    {/* qr code */}
                     <View>
-                        <Text style={{
-                            color: Colors.black,
-                            fontFamily: "Montserrat_700Bold",
-                            fontSize: 14
-                        }}>Amanda</Text>
-                        <Text style={{
-                            color: Colors.black,
-                            fontFamily: "Montserrat_400Regular",
-                            fontSize: 14
-                        }}>ID 98009902</Text>
-                        <Text style={{
-                            color: Colors.black,
-                            fontFamily: "Montserrat_400Regular",
-                            fontSize: 14
-                        }}>New York, NY</Text>
-                    </View>
+                        <View style={{
+                            width: 60,
+                            height: 60,
+                            overflow: 'hidden',
+                            alignItems: 'center',
+                            justifyContent: 'center',
 
-                </View>
-                {/* qr code */}
-                <View>
-                    <View style={{
-                        width: 60,
-                        height: 60,
-                        overflow: 'hidden',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-
-                    }}>
-                        <ImageBackground source={require('../../../../assets/qr.png')} style={{
-                            width: 80,
-                            height: 80,
                         }}>
-                            <Pressable
-                                onPress={() => setModalVisible(true)}
-                                style={{
-                                    width: 40,
-                                    height: 40,
-                                    borderRadius: 20,
-                                    backgroundColor: Colors.black,
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                    position: 'absolute',
-                                    top: 20,
-                                    right: 20,
+                            <ImageBackground source={require('../../../../assets/qr.png')} style={{
+                                width: 80,
+                                height: 80,
+                            }}>
+                                <Pressable
+                                    onPress={() => setModalVisible(true)}
+                                    style={{
+                                        width: 40,
+                                        height: 40,
+                                        borderRadius: 20,
+                                        backgroundColor: Colors.black,
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                        position: 'absolute',
+                                        top: 20,
+                                        right: 20,
 
-                                }}
-                            ><MaterialIcons name="zoom-out-map" size={24} color={`${Colors.white}`} /></Pressable>
-                        </ImageBackground>
+                                    }}
+                                ><MaterialIcons name="zoom-out-map" size={24} color={`${Colors.white}`} /></Pressable>
+                            </ImageBackground>
+                        </View>
+                        <Text style={{
+                            color: Colors.black,
+                            fontFamily: "Montserrat_400Regular",
+                            fontSize: 11,
+                            textAlign: 'center'
+                        }}>23 Scans</Text>
                     </View>
+                </View>
+                <View style={{
+                    backgroundColor: Colors.white,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    borderWidth: 1,
+                    borderRadius: 14,
+                    borderColor: Colors.white,
+                    paddingVertical: 8,
+                    paddingHorizontal: 16,
+                }}>
                     <Text style={{
                         color: Colors.black,
                         fontFamily: "Montserrat_400Regular",
-                        fontSize: 11,
-                        textAlign: 'center'
-                    }}>23 Scans</Text>
-                </View>
-            </View>
-            <View style={{
-                backgroundColor: Colors.white,
-                justifyContent: 'center',
-                alignItems: 'center',
-                borderWidth: 1,
-                borderRadius: 14,
-                borderColor: Colors.white,
-                paddingVertical: 8,
-                paddingHorizontal: 16,
-            }}>
-                <Text style={{
-                    color: Colors.black,
-                    fontFamily: "Montserrat_400Regular",
-                    fontSize: 14
-                }}>Store Credit</Text>
-                <Text style={{
-                    color: Colors.black,
-                    fontFamily: "Montserrat_700Bold",
-                    fontSize: 20
-                }}>$0.00</Text>
-                <View style={{ flexDirection: 'row', gap: 4 }}>
-                    <Text>At</Text>
-                    <Text onPress={() => router.push("/customer/store_credit")} style={{
+                        fontSize: 14
+                    }}>Store Credit</Text>
+                    <Text style={{
                         color: Colors.black,
                         fontFamily: "Montserrat_700Bold",
-                        fontSize: 14,
-                        textDecorationLine: 'underline'
-                    }}>0 Places</Text>
+                        fontSize: 20
+                    }}>$0.00</Text>
+                    <View style={{ flexDirection: 'row', gap: 4 }}>
+                        <Text>At</Text>
+                        <Text onPress={() => router.push("/customer/store_credit")} style={{
+                            color: Colors.black,
+                            fontFamily: "Montserrat_700Bold",
+                            fontSize: 14,
+                            textDecorationLine: 'underline'
+                        }}>0 Places</Text>
+                    </View>
                 </View>
-            </View>
-            <View style={{
-                marginVertical: 10
-            }}>
+                <View style={{
+                    marginVertical: 10
+                }}>
+                    <Text style={{
+                        color: Colors.black,
+                        fontFamily: "Montserrat_700Bold",
+                        textAlign: 'center',
+                        fontSize: 14,
+                        marginVertical: 10
+                    }}>How It Works</Text>
+                    <Text style={{
+                        color: Colors.black,
+                        fontFamily: "Montserrat_400Regular",
+                        textAlign: 'center'
+                    }}>Watch the video below to learn how to
+                        use this app to earn & redeem store credit
+                        at your favorite eateries.
+                    </Text>
+                </View>
+                <View style={{
+                    height: 200
+                }}>
+                    {/* Video player will be here */}
+                    {videoWatched === true ? "" : <Video
+                        ref={video}
+                        style={{
+                            flex: 1,
+                            alignSelf: 'stretch',
+                            borderRadius: 8,
+                            marginVertical: 10
+                        }}
+                        source={{ uri: "http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4" }}
+                        useNativeControls
+                        resizeMode='cover'
+                        isLooping
+                        onPlaybackStatusUpdate={setStatus}
+                    />}
+
+                </View>
+
+
                 <Text style={{
                     color: Colors.black,
                     fontFamily: "Montserrat_700Bold",
                     textAlign: 'center',
                     fontSize: 14,
                     marginVertical: 10
-                }}>How It Works</Text>
-                <Text style={{
-                    color: Colors.black,
-                    fontFamily: "Montserrat_400Regular",
-                    textAlign: 'center'
-                }}>Watch the video below to learn how to
-                    use this app to earn & redeem store credit
-                    at your favorite eateries.
-                </Text>
-            </View>
-            <View>
-                {/* Video player will be here */}
-            </View>
+                }}>Featured Stores</Text>
 
+                {
+                    featured_cards?.map((item) => (
+                        <FeaturedStoresCard key={item.id} imageUri={item.icon} storeName={item.title} tagline={item.tagline} />
+                    ))
+                }
 
-            <Text style={{
-                color: Colors.black,
-                fontFamily: "Montserrat_700Bold",
-                textAlign: 'center',
-                fontSize: 14,
-                marginVertical: 10
-            }}>Featured Stores</Text>
-
-            <View style={{
-                flex: 1
-            }}>
-                {videoWatched === true ? "" : <Video
-                    ref={video}
-                    style={{
-                        flex: 1,
-                        alignSelf: 'stretch',
-                        borderRadius: 8,
-                        marginVertical: 10
-                    }}
-                    source={{ uri: "http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4" }}
-                    useNativeControls
-                    resizeMode='cover'
-                    isLooping
-                    onPlaybackStatusUpdate={setStatus}
-                />}
+                {/* <View>
 
                 <FlashList
                     renderItem={({ item }) => {
@@ -301,7 +311,8 @@ export default function DashboardScreen() {
                     estimatedItemSize={10}
                     data={featured_cards}
                 />
-            </View>
+            </View> */}
+            </ScrollView>
             <View>
                 <ImageViewer modalVisible={modalVisible} onDismiss={() => setModalVisible(!modalVisible)} >
                     <ImageBackground source={require("../../../../assets/qr.png")} style={{
@@ -309,6 +320,7 @@ export default function DashboardScreen() {
                         height: 400,
                     }} /></ImageViewer>
             </View>
+
 
 
 

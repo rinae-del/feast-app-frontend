@@ -20,7 +20,7 @@ export default function LoginMainPage() {
     const router = useRouter()
     return (
         <ImageBackground source={bg} resizeMode="cover" style={styles.image}>
-            <View style={styles.overlay} />
+            {/* <View style={styles.overlay} /> */}
             <View style={{
                 flex: 1,
                 padding: 14,
