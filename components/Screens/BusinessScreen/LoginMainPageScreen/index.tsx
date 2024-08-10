@@ -3,7 +3,7 @@ import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native';
 import PhoneInput from 'react-native-international-phone-number';
-import bg from "../../../../assets/woman-eating.jpg";
+import bg from "../../../../assets/customer-background.jpg";
 
 export default function LoginMainPageScreen() {
     const [selectedCountry, setSelectedCountry] = useState(null);

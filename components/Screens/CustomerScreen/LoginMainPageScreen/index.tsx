@@ -2,7 +2,7 @@ import { Colors } from '@/constants/Colors';
 import React, { useState } from 'react';
 import { ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native';
 import PhoneInput from 'react-native-international-phone-number';
-import bg from "../../../../assets/woman-eating.jpg";
+import bg from "../../../../assets/customer-background.jpg";
 import { useRouter } from 'expo-router';
 
 export default function LoginMainPage() {
@@ -19,7 +19,7 @@ export default function LoginMainPage() {
 
     const router = useRouter()
     return (
-        <ImageBackground source={bg} resizeMode="cover" style={styles.image} blurRadius={1}>
+        <ImageBackground source={bg} resizeMode="cover" style={styles.image}>
             <View style={styles.overlay} />
             <View style={{
                 flex: 1,

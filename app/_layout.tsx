@@ -19,7 +19,9 @@ import {
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Pressable, StatusBar } from 'react-native';
 import Entypo from '@expo/vector-icons/Entypo';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { Colors } from '@/constants/Colors';
+import { Link } from 'expo-router';
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
@@ -45,6 +47,11 @@ export default function RootLayout() {
 
   if (!loaded) {
     return null;
+  }
+
+  function goToDashboard() {
+    // const router = useRouter()
+    // router.push("/customer/account")
   }
 
   return (
@@ -85,9 +92,16 @@ export default function RootLayout() {
         <Stack.Screen name="customer/reset_password/index" options={{ headerShown: true, title: "Reset Password" }} />
         <Stack.Screen name="customer/verify_number/index" options={{ headerShown: true, title: "Verify Your Number" }} />
         <Stack.Screen name="customer/signup/index" options={{ headerShown: true, title: "Register" }} />
+        <Stack.Screen name="customer/history/index" options={{ headerShown: true, title: "History", headerRight: () => <Link href="/customer/my_account"><MaterialCommunityIcons name="account-circle" size={24} color="black" /></Link> }} />
         <Stack.Screen name="customer/location_search/index" options={{ headerShown: true, title: "Location" }} />
         <Stack.Screen name="customer/final_step/index" options={{ headerShown: true, title: "Final Step" }} />
-        <Stack.Screen name="customer/dashboard/index" options={{ headerShown: true, title: "Dashboard" }} />
+        <Stack.Screen name="customer/dashboard/index" options={{ headerShown: true, title: "Dashboard", headerRight: () => <Link href="/customer/my_account"><MaterialCommunityIcons name="account-circle" size={24} color="black" /></Link> }} />
+        <Stack.Screen name="customer/my_profile/index" options={{ headerShown: true, title: "My Profile" }} />
+        <Stack.Screen name="customer/store_credit/index" options={{ headerShown: true, title: "Store Credit", headerRight: () => <Link href="/customer/my_account"><MaterialCommunityIcons name="account-circle" size={24} color="black" /></Link> }} />
+        <Stack.Screen name="customer/my_account/index" options={{
+          headerTintColor: Colors.white,
+          headerStyle: { backgroundColor: "#000" }, headerShown: true, title: "My Account", headerRight: () => <MaterialCommunityIcons name="account-circle" size={24} color="black" />
+        }} />
 
       </Stack>
     </SafeAreaProvider>

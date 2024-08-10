@@ -3,13 +3,14 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as ImagePicker from 'expo-image-picker';
 import { useRouter } from 'expo-router';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Image, Pressable, Text, View } from 'react-native';
 
 export default function FinalStepScreen() {
     const router = useRouter()
 
-    const [image, setImage] = useState<string | null | any>(null);
+    const [image, setImage] = useState<string | null | any>("");
+    const [profileFromStorage, setProfileFromStorage] = useState("")
 
     const pickImage = async () => {
         // No permissions request is necessary for launching the image library
@@ -27,6 +28,23 @@ export default function FinalStepScreen() {
             storeData(result.assets[0].uri)
         }
     };
+
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                const value = await AsyncStorage.getItem('displayPicture');
+                if (value !== null) {
+                    // value previously stored
+                    setProfileFromStorage(value)
+                }
+            } catch (e) {
+                // error reading value
+                console.log("async error", e)
+            }
+        };
+        getData()
+    }, [])
+
 
     // This is temporary until we connect to the backend
     const storeData = async (value: string) => {
@@ -65,7 +83,7 @@ export default function FinalStepScreen() {
                             justifyContent: 'center',
                             marginVertical: 20
                         }}>
-                            <Image source={{ uri: image }} style={{
+                            <Image source={{ uri: profileFromStorage !== "" ? profileFromStorage : undefined }} style={{
                                 width: 200,
                                 height: 200,
                             }} />
